@@ -206,23 +206,6 @@ nav .fa-solid{
     display: none;
 }
 
-.text-box .location-note{
-    color: white;
-    font-weight: 600;
-    font-size: 17px;
-    line-height: 1.6;
-    margin-top: 20px;
-    opacity: 0.95;
-}
-
-/* For mobile screens */
-@media only screen and (max-width: 600px){
-    .text-box .location-note{
-        font-size: 15px;
-        margin-top: 15px;
-    }
-}
-
 /*------------------------css for small screen-------------------*/
 @media only screen and (max-width: 600px){
     #header{

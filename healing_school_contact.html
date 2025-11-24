@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register For Healing and Prophetic School</title>
+	<link rel="stylesheet" href="healing_school_contact.css">
+	<link rel="icon" type="image/x-icon" href="images/newlife-logo.png">
+    <script src="https://kit.fontawesome.com/57615040be.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="header">
+		<div class="container">
+			<nav>
+				<a href="healing_school_home.html"><img src="images/newlife-logo.png" class="logo"></a>
+			</nav>
+			<div class="bg-zoom"></div>
+		</div>
+	</div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="contact-form">
+                <P>Begin Your Journey</P>
+                <h2>REGISTER NOW</h2>
+                <form id="registrationForm">
+                    <input type="text" id="name" name="Name" placeholder="Your Name" required>
+                    <input type="email" id="email" name="Email" placeholder="Your Email" required>
+                    <input type="tel" id="phone" name="Phone" placeholder="Your Phone Number" required>
+                    <textarea id="message" name="Message" rows="6" placeholder="Tell us about yourself (Optional)"></textarea>
+                    <button type="submit" class="btn2">Submit Registration</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-contact">
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/Gabrielisraelministriesinternational"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/newlife_word_church_global/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@newlifewordchurchglobal"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+		<p>© 2025 <b>Newlife Word Church Global</b></p>
+	</div>
+
+    <script>
+        // WhatsApp number (include country code without + sign)
+        // Example: For +234 123 456 7890, use "2341234567890"
+        const whatsappNumber = "2349030809163"; // REPLACE WITH YOUR ACTUAL WHATSAPP NUMBER
+
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Create WhatsApp message
+            let whatsappMessage = `*NEW REGISTRATION - HEALING & PROPHETIC SCHOOL*%0A%0A`;
+            whatsappMessage += `*Name:* ${encodeURIComponent(name)}%0A`;
+            whatsappMessage += `*Email:* ${encodeURIComponent(email)}%0A`;
+            whatsappMessage += `*Phone:* ${encodeURIComponent(phone)}%0A`;
+            
+            if(message.trim() !== '') {
+                whatsappMessage += `*Message:* ${encodeURIComponent(message)}`;
+            }
+            
+            // Open WhatsApp with the message
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+            window.open(whatsappURL, '_blank');
+            
+            // Optional: Clear form after submission
+            // document.getElementById('registrationForm').reset();
+        });
+
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+</body>
+</html>

@@ -63,22 +63,25 @@
             const phone = document.getElementById('phone').value;
             const message = document.getElementById('message').value;
             
-            // Create WhatsApp message
-            let whatsappMessage = `*NEW REGISTRATION - HEALING & PROPHETIC SCHOOL*%0A%0A`;
-            whatsappMessage += `*Name:* ${encodeURIComponent(name)}%0A`;
-            whatsappMessage += `*Email:* ${encodeURIComponent(email)}%0A`;
-            whatsappMessage += `*Phone:* ${encodeURIComponent(phone)}%0A`;
+            // Create WhatsApp message (without encoding first)
+            let whatsappMessage = '*NEW REGISTRATION - HEALING & PROPHETIC SCHOOL*\n\n';
+            whatsappMessage += '*Name:* ' + name + '\n';
+            whatsappMessage += '*Email:* ' + email + '\n';
+            whatsappMessage += '*Phone:* ' + phone + '\n';
             
             if(message.trim() !== '') {
-                whatsappMessage += `*Message:* ${encodeURIComponent(message)}`;
+                whatsappMessage += '*Message:* ' + message;
             }
+
+            // Encode the entire message at once
+            const encodedMessage = encodeURIComponent(whatsappMessage);
             
             // Open WhatsApp with the message
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
             window.open(whatsappURL, '_blank');
             
             // Optional: Clear form after submission
-            // document.getElementById('registrationForm').reset();
+            document.getElementById('registrationForm').reset();
         });
 
         var sidemenu = document.getElementById("sidemenu");
